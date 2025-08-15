@@ -1,0 +1,80 @@
+/* Side Panel Styles */
+.side-panel {
+  width: 250px;
+  height: 100vh;
+  background: #2c3e50;
+  color: white;
+  position: fixed;
+  padding: 20px 0;
+  transition: all 0.3s;
+  z-index: 1000;
+}
+
+.brand {
+  padding: 0 20px 30px;
+  border-bottom: 1px solid #34495e;
+  margin-bottom: 20px;
+}
+
+.brand h3 {
+  color: white;
+  margin: 0;
+  font-weight: 600;
+}
+
+.nav-item {
+  color: #ecf0f1 !important;
+  padding: 12px 25px !important;
+  margin: 5px 10px;
+  border-radius: 4px !important;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s;
+}
+
+.nav-item:hover {
+  background: #34495e !important;
+  text-decoration: none;
+}
+
+.nav-item.active {
+  background: #3498db !important;
+}
+
+.nav-item i {
+  font-size: 1.1rem;
+}
+
+/* Main Content Area */
+.main-content {
+  margin-left: 250px;
+  padding: 30px;
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .side-panel {
+    width: 70px;
+    overflow: hidden;
+  }
+  
+  .side-panel:hover {
+    width: 250px;
+  }
+  
+  .brand h3, .nav-item span {
+    display: none;
+  }
+  
+  .side-panel:hover .brand h3,
+  .side-panel:hover .nav-item span {
+    display: block;
+  }
+  
+  .main-content {
+    margin-left: 70px;
+  }
+}

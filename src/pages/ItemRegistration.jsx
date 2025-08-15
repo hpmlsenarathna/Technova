@@ -25,30 +25,7 @@ const ItemRegistration = () => {
   return (
     <Panel title="Item Registration">
       <Form onSubmit={handleSubmit}>
-        <Row className="mb-3">
-          <Form.Group as={Col} controlId="formName">
-            <Form.Label>Item Name</Form.Label>
-            <Form.Control
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
-
-          <Form.Group as={Col} controlId="formPrice">
-            <Form.Label>Price (Rs.)</Form.Label>
-            <Form.Control
-              type="number"
-              name="price"
-              value={formData.price}
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
-        </Row>
-
+        {/* Category Selection (First) */}
         <Form.Group className="mb-3" controlId="formCategory">
           <Form.Label>Category</Form.Label>
           <Form.Select
@@ -61,6 +38,32 @@ const ItemRegistration = () => {
             ))}
           </Form.Select>
         </Form.Group>
+
+        <Row className="mb-3">
+          {/* Item Name (Second) */}
+          <Form.Group as={Col} controlId="formName">
+            <Form.Label>Item Name</Form.Label>
+            <Form.Control
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </Form.Group>
+
+          {/* Price (Third) */}
+          <Form.Group as={Col} controlId="formPrice">
+            <Form.Label>Price (Rs.)</Form.Label>
+            <Form.Control
+              type="number"
+              name="price"
+              value={formData.price}
+              onChange={handleChange}
+              required
+            />
+          </Form.Group>
+        </Row>
 
         <Button variant="primary" type="submit">
           Register Item

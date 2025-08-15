@@ -7,7 +7,7 @@ const SidePanel = () => {
   
   const menuItems = [
     { path: "/", name: "Item Registration", icon: "bi-box-seam" },
-    { path: "/root-master", name: "Root Master", icon: "bi-diagram-2" },
+    { path: "/root-master", name: "Rout Master", icon: "bi-diagram-2" },
     { path: "/employee-master", name: "Employee Master", icon: "bi-people" }
   ];
 

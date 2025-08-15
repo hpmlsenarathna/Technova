@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SidePanel from './components/SidePanel';
 import ItemRegistration from './pages/ItemRegistration';
-import RootMaster from './pages/RootMaster';
+import RootMaster from './pages/RoutMaster';
 import EmployeeMaster from './pages/EmployeeMaster';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';

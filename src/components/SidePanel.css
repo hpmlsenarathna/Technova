@@ -2,7 +2,7 @@
 .side-panel {
   width: 250px;
   height: 100vh;
-  background: #2c3e50;
+  background: #1B5E20; /* A very dark green for high contrast */
   color: white;
   position: fixed;
   padding: 20px 0;
@@ -12,7 +12,7 @@
 
 .brand {
   padding: 0 20px 30px;
-  border-bottom: 1px solid #34495e;
+  border-bottom: 1px solid #4CAF50; /* Uses the same green as your form borders */
   margin-bottom: 20px;
 }
 
@@ -23,27 +23,23 @@
 }
 
 .nav-item {
-  color: #ecf0f1 !important;
+  color: #FFFFFF !important; /* Pure white text for clear visibility */
+  font-weight: 600; /* Bolding the text */
   padding: 12px 25px !important;
   margin: 5px 10px;
   border-radius: 4px !important;
   display: flex;
   align-items: center;
-  gap: 12px;
   transition: all 0.2s;
 }
 
 .nav-item:hover {
-  background: #34495e !important;
+  background: #4CAF50 !important; /* Matches your form input borders on hover */
   text-decoration: none;
 }
 
 .nav-item.active {
-  background: #3498db !important;
-}
-
-.nav-item i {
-  font-size: 1.1rem;
+  background: #66BB6A !important; /* A bright green to indicate the active page */
 }
 
 /* Main Content Area */

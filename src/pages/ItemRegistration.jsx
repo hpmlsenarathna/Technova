@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Form, Button, ButtonGroup } from 'react-bootstrap';
+import { Form, Button, InputGroup } from 'react-bootstrap';
 import Panel from '../components/Panel';
+import { FaSave, FaTrash, FaEdit, FaTimes } from 'react-icons/fa';
 
 const ItemRegistration = () => {
   const [formData, setFormData] = useState({
@@ -31,78 +32,101 @@ const ItemRegistration = () => {
     alert('Item deleted successfully!');
   };
 
+  const handleClear = () => {
+    setFormData({ name: '', price: '', category: 'plastic' });
+  };
+
+  const inputWidth = '50%'; // Set a common width for all input fields
+
   return (
-    <Panel title="Item Registration">
+    <Panel title="Item Registration" style={{ borderColor: '#4CAF50' }}>
       <Form>
         {/* Category Selection */}
-        <Form.Group className="mb-2" controlId="formCategory">
-          <Form.Label className="mb-1">Category</Form.Label>
+        <Form.Group className="mb-3" controlId="formCategory">
+          <Form.Label style={{ color: '#2E7D32' }}>Category</Form.Label>
           <Form.Select
             name="category"
             value={formData.category}
             onChange={handleChange}
-            size="sm"
-            style={{ width: '70%', height: '32px' }}
+            style={{
+              borderColor: '#4CAF50',
+              height: '40px',
+              width: inputWidth
+            }}
           >
             {categories.map((cat, index) => (
-              <option key={index} value={cat}>{cat}</option>
+              <option key={index} value={cat} style={{ padding: '8px' }}>
+                {cat}
+              </option>
             ))}
           </Form.Select>
         </Form.Group>
 
         {/* Item Name */}
-        <Form.Group className="mb-2" controlId="formName">
-          <Form.Label className="mb-1">Item Name</Form.Label>
+        <Form.Group className="mb-3" controlId="formName">
+          <Form.Label style={{ color: '#2E7D32' }}>Item Name</Form.Label>
           <Form.Control
             type="text"
             name="name"
             value={formData.name}
             onChange={handleChange}
             required
-            size="sm"
-            style={{ width: '70%', height: '32px' }}
+            style={{
+              borderColor: '#4CAF50',
+              height: '40px',
+              width: inputWidth
+            }}
+            placeholder="Enter item name"
           />
         </Form.Group>
 
-        {/* Price */}
-        <Form.Group className="mb-3" controlId="formPrice">
-          <Form.Label className="mb-1">Price (Rs.)</Form.Label>
+        {/* Price Input */}
+        <Form.Group className="mb-4" controlId="formPrice">
+          <Form.Label style={{ color: '#2E7D32' }}>Price (Rs.)</Form.Label>
           <Form.Control
             type="number"
             name="price"
             value={formData.price}
             onChange={handleChange}
             required
-            size="sm"
-            style={{ width: '70%', height: '32px' }}
+            style={{
+              borderColor: '#4CAF50',
+              height: '40px',
+              width: inputWidth
+            }}
+            placeholder="Enter price"
           />
         </Form.Group>
 
-        {/* Action Buttons - Uniform Sizes */}
-        <div className="d-flex gap-2 mt-2">
-          <Button 
-            variant="primary"
-            onClick={handleAdd}
-            className="flex-grow-1 py-1"
-            style={{ minWidth: '80px' }}
+        {/* Action Buttons */}
+        <div className="d-flex justify-content-between">
+          <Button
+            variant="outline-danger"
+            onClick={handleClear}
+            style={{ width: '23%' }}
           >
-            Add
+            <FaTimes style={{ marginRight: '5px' }} /> Clear
           </Button>
-          <Button 
-            variant="primary"
-            onClick={handleUpdate}
-            className="flex-grow-1 py-1"
-            style={{ minWidth: '80px' }}
-          >
-            Update
-          </Button>
-          <Button 
-            variant="primary"
+          <Button
+            variant="danger"
             onClick={handleDelete}
-            className="flex-grow-1 py-1"
-            style={{ minWidth: '80px' }}
+            style={{ width: '23%' }}
           >
-            Delete
+            <FaTrash style={{ marginRight: '5px' }} /> Delete
+          </Button>
+          <Button
+            variant="warning"
+            onClick={handleUpdate}
+            style={{ width: '23%', color: 'white' }}
+          >
+            <FaEdit style={{ marginRight: '5px' }} /> Update
+          </Button>
+          <Button
+            variant="success"
+            onClick={handleAdd}
+            style={{ width: '23%' }}
+          >
+            <FaSave style={{ marginRight: '5px' }} /> Save
           </Button>
         </div>
       </Form>

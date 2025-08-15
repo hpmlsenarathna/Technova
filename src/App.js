@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SidePanel from './components/SidePanel';
 import ItemRegistration from './pages/ItemRegistration';
-import RootMaster from './pages/RoutMaster';
+import RoutMaster from './pages/RoutMaster'; // Changed import name to match the file
 import EmployeeMaster from './pages/EmployeeMaster';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -14,7 +14,7 @@ function App() {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<ItemRegistration />} />
-            <Route path="/root-master" element={<RootMaster />} />
+            <Route path="/rout-master" element={<RoutMaster />} /> {/* Corrected the path to match the SidePanel link */}
             <Route path="/employee-master" element={<EmployeeMaster />} />
           </Routes>
         </main>

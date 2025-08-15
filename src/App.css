@@ -66,3 +66,43 @@ body {
 .navbar, .navbar-brand {
   display: none !important;
 }
+
+/* Custom form control focus states */
+.form-control:focus, .form-select:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Smooth transitions */
+.form-control, .form-select, .btn {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Card hover effect */
+.card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* For the Panel component */
+.panel-header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 4px 4px 0 0;
+}
+
+/* Focus states */
+.form-control:focus, .form-select:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.25);
+}
+
+/* Button hover states */
+.btn-success:hover {
+  background-color: #3e8e41;
+  border-color: #3e8e41;
+}
+
+.btn-outline-success:hover {
+  background-color: #e8f5e9;
+}
